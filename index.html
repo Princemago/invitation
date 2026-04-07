@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Click me</title>
+<title>Click Me</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
@@ -63,7 +63,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Decorative floral pattern at the back (visible during open state) */
 .envelope::before {
   content: "🌸🌼🌸";
   position: absolute;
@@ -122,7 +121,6 @@ body {
   z-index: 5;
   font-family: 'Playfair Display', serif;
   backdrop-filter: blur(2px);
-  transition: all 0.3s;
 }
 .sticker::before {
   content: "💌";
@@ -130,7 +128,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* Moving flowers - animated elements that float and move when envelope opens */
 .floating-flower {
   position: absolute;
   pointer-events: none;
@@ -157,7 +154,6 @@ body {
   transform: rotateX(-130deg);
 }
 
-/* Scene 1 */
 .scene {
   width: 900px; height: 520px;
   background: white;
@@ -238,7 +234,6 @@ body {
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,77,109,0.5); }
 .btn-primary:active { transform: scale(0.97); }
 
-/* Custom confirmation modal */
 .confirm-modal {
   position: fixed;
   top: 0;
@@ -326,7 +321,6 @@ body {
 .modal-btn-yes:hover { transform: scale(1.02); filter: brightness(1.02); }
 .modal-btn-no:hover { background: #ccc; }
 
-/* Carousel scenes */
 .next-scene {
   width: 1100px; height: 560px;
   background: white;
@@ -353,6 +347,7 @@ body {
   position: relative;
   overflow: hidden;
   background: #f8e8ed;
+  touch-action: pan-y pinch-zoom;
 }
 
 .carousel-slide {
@@ -377,34 +372,7 @@ body {
   pointer-events: auto;
 }
 
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  padding: 0 12px;
-  z-index: 10;
-  pointer-events: none;
-}
-.carousel-controls button {
-  background: rgba(255,255,255,0.9);
-  border: none;
-  width: 38px; height: 38px;
-  color: var(--rose);
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  pointer-events: auto;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: bold;
-}
-.carousel-controls button:hover { background: white; transform: scale(1.1); }
+.carousel-controls { display: none; }
 
 .next-right {
   flex: 1;
@@ -464,7 +432,7 @@ body {
 .arrow-btn:hover { transform: scale(1.12); box-shadow: 0 8px 24px rgba(255,77,109,0.55); }
 .arrow-btn:active { transform: scale(0.95); }
 
-/* Food category scenes */
+/* Food scenes */
 .food-scene {
   width: 1100px; height: 560px;
   background: white;
@@ -492,6 +460,7 @@ body {
   position: relative;
   overflow: hidden;
   background: #f8e8ed;
+  touch-action: pan-y pinch-zoom;
 }
 .food-carousel-slide {
   position: relative;
@@ -513,34 +482,7 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
-.food-carousel-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  padding: 0 12px;
-  z-index: 10;
-  pointer-events: none;
-}
-.food-carousel-controls button {
-  background: rgba(255,255,255,0.9);
-  border: none;
-  width: 38px; height: 38px;
-  color: var(--rose);
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  pointer-events: auto;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: bold;
-}
-.food-carousel-controls button:hover { background: white; transform: scale(1.1); }
+.food-carousel-controls { display: none; }
 
 .food-right {
   flex: 1;
@@ -556,11 +498,24 @@ body {
   color: var(--rose);
   margin: 0 0 10px;
 }
+.friendly-note {
+  background: #fff0f5;
+  border-radius: 30px;
+  padding: 8px 16px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--rose);
+  margin-bottom: 20px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(255,77,109,0.1);
+  font-style: italic;
+}
 .category-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .food-checkbox {
   margin-bottom: 8px;
@@ -619,7 +574,6 @@ body {
   box-shadow: 0 6px 16px var(--shadow);
 }
 
-/* Receipt styles */
 .receipt-scene {
   width: 520px;
   max-height: 85vh;
@@ -714,7 +668,7 @@ body {
   gap: 20px;
 }
 .receipt-footer button {
-  background: #ff4d6d;
+  background: #5a3e48;
   border: none;
   color: white;
   padding: 8px 20px;
@@ -724,333 +678,178 @@ body {
   font-size: 12px;
 }
 .receipt-footer .close-receipt { background: #5a3e48; }
+.receipt-footer .claim-reward-btn { background: linear-gradient(135deg, #f9a826, #ff6b35); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 @media print {
   body * { visibility: hidden; }
   .receipt-scene, .receipt-scene * { visibility: visible; }
   .receipt-scene { position: absolute; top: 0; left: 0; transform: none; width: 100%; border-radius: 0; }
 }
-/* ================= MOBILE RESPONSIVENESS ================= */
 @media (max-width: 768px) {
-
-  body {
-    overflow: auto; /* allow scrolling */
-  }
-
-  .wrapper {
-    width: 90%;
-    height: 200px;
-  }
-
-  /* Scene 1 */
-  .scene {
-    width: 95%;
-    height: auto;
-    flex-direction: column;
-    border-radius: 12px;
-  }
-
-  .scene-left {
-    height: 200px;
-  }
-
-  .scene-right {
-    padding: 20px;
-  }
-
-  .scene-right h2 {
-    font-size: 20px;
-  }
-
-  .scene-right p {
-    font-size: 13px;
-  }
-
-  .btn-primary {
-    width: 100%;
-  }
-
-  /* Museum & Binondo Scenes */
-  .next-scene {
-    width: 95%;
-    height: auto;
-    flex-direction: column;
-  }
-
-  .next-left {
-    width: 100%;
-    height: 220px;
-  }
-
-  .next-right {
-    padding: 20px;
-    padding-bottom: 80px;
-  }
-
-  .next-right h2 {
-    font-size: 20px;
-  }
-
-  .description-text {
-    font-size: 13px;
-  }
-
-  /* Food Scenes */
-  .food-scene {
-    width: 95%;
-    height: auto;
-    flex-direction: column;
-  }
-
-  .food-left {
-    width: 100%;
-    height: 220px;
-  }
-
-  .food-right {
-    padding: 20px;
-    padding-bottom: 90px;
-  }
-
-  .food-right h2 {
-    font-size: 20px;
-  }
-
-  .category-chips {
-    gap: 8px;
-  }
-
-  .food-checkbox label {
-    font-size: 12px;
-    padding: 8px 14px;
-  }
-
-  /* Buttons */
-  .arrow-btn {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-  }
-
-  .next-btn-sm {
-    font-size: 13px;
-    padding: 8px 18px;
-  }
-
-  /* Footer nav spacing */
-  .nav-footer,
-  .food-nav {
-    bottom: 16px;
-    left: 20px;
-    right: 20px;
-  }
-
-  /* Receipt */
-  .receipt-scene {
-    width: 95%;
-    max-height: 90vh;
-  }
-
-  .receipt-body {
-    padding: 16px;
-  }
-
-  .receipt-header h2 {
-    font-size: 18px;
-  }
-
-  .receipt-row {
-    font-size: 11px;
-  }
-
-  /* Modal */
-  .modal-content {
-    width: 90%;
-  }
-
-  .modal-content p {
-    font-size: 16px;
-  }
-
-  .modal-btn {
-    font-size: 14px;
-    padding: 8px 18px;
-  }
+  body { overflow: auto; }
+  .wrapper { width: 90%; height: 200px; }
+  .scene, .next-scene, .food-scene { width: 95%; height: auto; flex-direction: column; border-radius: 12px; }
+  .scene-left, .next-left, .food-left { height: 200px; width: 100%; }
+  .scene-right, .next-right, .food-right { padding: 20px; padding-bottom: 80px; }
+  .category-chips { gap: 8px; }
+  .food-checkbox label { font-size: 12px; padding: 8px 14px; white-space: normal; }
+  .arrow-btn { width: 42px; height: 42px; }
+  .next-btn-sm { font-size: 13px; padding: 8px 18px; }
+  .receipt-scene { width: 95%; }
 }
 
+/* Reward Scene - elegant card style with eminem.jpg and title */
+.reward-floral-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+.reward-floral-scene.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
+}
+.reward-card {
+  background: linear-gradient(145deg, #fff5f7, #ffffff);
+  border-radius: 48px;
+  max-width: 460px;
+  width: 85%;
+  padding: 30px 28px 40px;
+  text-align: center;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  animation: cardPop 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+@keyframes cardPop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.reward-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--rose);
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+}
+.reward-card .reward-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff6b6b;
+  background: #ffe6eb;
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 60px;
+  margin-bottom: 24px;
+}
+.reward-card img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  border: 4px solid white;
+}
+.reward-card p {
+  font-size: 16px;
+  color: var(--text-soft);
+  margin: 12px 0 0;
+  font-style: italic;
+}
+.reward-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: 0.2s;
+  z-index: 3100;
+}
+.reward-close:hover { background: var(--rose); transform: scale(1.05); }
 </style>
 </head>
 <body>
 
 <div class="wrapper" id="wrapper" onclick="openEnvelope()">
-  <div class="envelope">
-    <div class="flap"></div>
-    <div class="sticker">Open</div>
-  </div>
-  <!-- Moving decorative flowers that appear on open -->
-  <div class="floating-flower flower1">🌸</div>
-  <div class="floating-flower flower2">🌼</div>
-  <div class="floating-flower flower3">🌷</div>
-  <div class="floating-flower flower4">🌺</div>
-  <div class="floating-flower flower5">🌻</div>
+  <div class="envelope"><div class="flap"></div><div class="sticker">Open</div></div>
+  <div class="floating-flower flower1">🌸</div><div class="floating-flower flower2">🌼</div><div class="floating-flower flower3">🌷</div><div class="floating-flower flower4">🌺</div><div class="floating-flower flower5">🌻</div>
 </div>
 
-<!-- Custom confirmation modal -->
-<div class="confirm-modal" id="confirmModal">
-  <div class="modal-content">
-    <div class="modal-gif" id="modalGif"><img id="modalGifImg" src="happy.gif" alt="reaction"></div>
-    <p id="modalMessage">Ready for your Binondo date?</p>
-    <div class="modal-datetime" id="modalDateTime"></div>
-    <div class="modal-buttons">
-      <button class="modal-btn modal-btn-yes" id="modalYesBtn">Yes, Let's Go! 💖</button>
-      <button class="modal-btn modal-btn-no" id="modalNoBtn">No, Maybe Later 🥺</button>
-    </div>
-  </div>
-</div>
+<div class="confirm-modal" id="confirmModal"><div class="modal-content"><div class="modal-gif" id="modalGif"><img id="modalGifImg" src="happy.gif" alt="reaction"></div><p id="modalMessage">Ready for your Binondo date?</p><div class="modal-datetime" id="modalDateTime"></div><div class="modal-buttons"><button class="modal-btn modal-btn-yes" id="modalYesBtn">Yes, Let's Go! 💖</button><button class="modal-btn modal-btn-no" id="modalNoBtn">No, Maybe Later 🥺</button></div></div></div>
 
-<!-- Scene 1: Meeting point -->
-<div class="scene" id="scene1">
-  <div class="scene-left"><img src="market.jpg" alt="Market Market"></div>
-  <div class="scene-right">
-    <h2>Meeting at Market! Market!</h2>
-    <p>📍 Market! Market! Shopping Mall, Newport City, Pasay</p>
-    <p>Suggestion: Take Angkas or Grab to prevent getting lost 😝</p>
-    <label>📅 Pick a Date</label>
-    <input type="date" id="meetingDate" value="2026-04-18">
-    <label>⏰ Choose Time</label>
-    <select id="time">
-      <option>7:00 AM</option><option>8:00 AM</option><option>9:00 AM</option>
-      <option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option>
-      <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
-      <option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
-      <option>7:00 PM</option>
-    </select>
-    <button class="btn-primary" id="setDateTimeBtn">Set Date & Time ✨</button>
+<div class="scene" id="scene1"><div class="scene-left"><img src="market.jpg" alt="Market Market"></div><div class="scene-right"><h2>Meeting at Market! Market!</h2><p>📍 Market! Market! Shopping Mall, Newport City, Pasay</p><label>📅 Pick a Date</label><input type="date" id="meetingDate" value="2026-04-18"><label>⏰ Choose Time</label><select id="time"><option>7:00 AM</option><option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option></select><button class="btn-primary" id="setDateTimeBtn">Set Date & Time ✨</button></div></div>
+
+<div class="next-scene" id="fineArtsScene"><div class="next-left"><div class="carousel-container" data-carousel="fineArts"><div class="carousel-slide"><img src="fine1.jpeg" class="active" alt="Fine Art 1"><img src="fine2.jpg" alt="Fine Art 2"><img src="fine3.jpg" alt="Fine Art 3"></div></div></div><div class="next-right"><h2>🎨 National Museum of Fine Arts</h2><div class="location-line">📍 Padre Burgos Ave, Ermita, Manila</div><div class="description-text">🏛️ Home to iconic Filipino masterpieces including Juan Luna's "Spoliarium" and Félix Hidalgo's "Las Virgenes Cristianas Expuestas al Populacho".</div><p>📅 Date: <b id="chosenDateDisplay"></b> &nbsp;| ⏰ Time: <b id="chosenTimeFineArts"></b></p><div class="nav-footer"><span></span><button class="arrow-btn" onclick="goToNaturalHistory()">&#10140;</button></div></div></div>
+<div class="next-scene" id="naturalHistoryScene"><div class="next-left"><div class="carousel-container" data-carousel="naturalHistory"><div class="carousel-slide"><img src="natural1.jpg" class="active" alt="Natural History 1"><img src="natural2.jpg" alt="Natural History 2"><img src="natural3.jpg" alt="Natural History 3"></div></div></div><div class="next-right"><h2>🦕 National Museum of Natural History</h2><div class="location-line">📍 Agrifina Circle, Ermita, Manila</div><div class="description-text">🌿 Featuring the "Tree of Life" elevator at its center, this museum showcases the rich biodiversity of the Philippines.</div><p>📅 Date: <b id="chosenDateDisplay2"></b> &nbsp;| ⏰ Time: <b id="chosenTimeNatural"></b></p><div class="nav-footer"><button class="arrow-btn" onclick="backToFineArts()">&#8592;</button><button class="arrow-btn" onclick="goToAnthropology()">&#10140;</button></div></div></div>
+<div class="next-scene" id="anthroScene"><div class="next-left"><div class="carousel-container" data-carousel="anthro"><div class="carousel-slide"><img src="anthro1.jpg" class="active" alt="Anthropology 1"><img src="anthro2.jpg" alt="Anthropology 2"><img src="anthro3.jpg" alt="Anthropology 3"></div></div></div><div class="next-right"><h2>🏺 National Museum of Anthropology</h2><div class="location-line">📍 Agrifina Circle, Ermita, Manila</div><div class="description-text">📜 Journey through the archaeological and ethnographic heritage of the Philippines. See the "Maitum Jars" and ancient goldwork.</div><p>📅 Date: <b id="chosenDateDisplay3"></b> &nbsp;| ⏰ Time: <b id="chosenTimeAnthro"></b></p><div class="nav-footer"><button class="arrow-btn" onclick="backToNaturalHistory()">&#8592;</button><button class="arrow-btn" onclick="goToBinondo()">&#10140;</button></div></div></div>
+<div class="next-scene" id="binondoScene"><div class="next-left"><div class="carousel-container" data-carousel="binondo"><div class="carousel-slide"><img src="binondo1.jpg" class="active" alt="Binondo 1"><img src="binondo2.jpg" alt="Binondo 2"><img src="binondo3.jpg" alt="Binondo 3"></div></div></div><div class="next-right"><h2>🏮 Binondo, Chinatown Manila</h2><div class="location-line">📍 Manila, Metro Manila (Oldest Chinatown in the world)</div><div class="description-text">🥢 Established in 1594, Binondo is the world's OLDEST Chinatown! A vibrant district where Chinese-Filipino culture thrives.</div><p>📅 Date: <b id="chosenDateDisplay4"></b> &nbsp;| ⏰ Time: <b id="chosenTimeBinondo"></b></p><div class="nav-footer"><button class="arrow-btn" onclick="backToAnthropology()">&#8592;</button><button class="arrow-btn" onclick="goToFirstFoodCategory()">&#10140;</button></div></div></div>
+
+<!-- Food scenes -->
+<div class="food-scene" id="appetizersScene"><div class="food-left"><div class="food-carousel-container" id="appetizersCarousel"><div class="food-carousel-slide"><img src="vegeSelect1.jpg" class="active" alt="Vege Select 1"><img src="vegeSelect.jpg" alt="Vege Select"><img src="bites.png" alt="Binondo Bites"><img src="bites1.jpg" alt="Binondo Bites 2"><img src="dongbei.jpg" alt="Dong Bei Dumplings"><img src="friedsiopao.jpg" alt="Fried Siopao"></div></div></div><div class="food-right"><h2>🥟 Appetizers Selection</h2><div class="friendly-note">🌸 Feel free to try as many as you like ✨</div><div class="category-chips" id="appetizersList"></div><div class="food-nav"><button class="arrow-btn" onclick="backToBinondoFromFood()">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('appetizers','restoScene')">Next: Resto →</button></div></div></div>
+<div class="food-scene" id="restoScene"><div class="food-left"><div class="food-carousel-container" id="restoCarousel"><div class="food-carousel-slide"><img src="chuan.jpeg" class="active" alt="Chuan Kee 1"><img src="chuan1.jpeg" alt="Chuan Kee 2"><img src="chuan2.jpeg" alt="Chuan Kee 3"><img src="sincerity.jpg" alt="Sincerity 1"><img src="sincerity1.jpg" alt="Sincerity 2"><img src="sincerity2.jpg" alt="Sincerity 3"><img src="wai.jpg" alt="Wai Ying 1"><img src="wai1.jpg" alt="Wai Ying 2"><img src="wai2.jpg" alt="Wai Ying 3"></div></div></div><div class="food-right"><h2>🍜 Restaurants</h2><div class="friendly-note">🌸 Feel free to try as many as you like ✨</div><div class="category-chips" id="restoList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('appetizersScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('resto','refreshersScene')">Next: Refreshers →</button></div></div></div>
+<div class="food-scene" id="refreshersScene"><div class="food-left"><div class="food-carousel-container" id="refreshersCarousel"><div class="food-carousel-slide"><img src="wong.jpg" class="active" alt="Wongkei Drink"><img src="dragon.png" alt="Dragon Fruit Drink"><img src="magic.jpg" alt="Magic Water"></div></div></div><div class="food-right"><h2>🧃 Refreshers</h2><div class="friendly-note">🌸 Feel free to try as many as you like ✨</div><div class="category-chips" id="refreshersList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('restoScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('refreshers','dessertsScene')">Next: Desserts →</button></div></div></div>
+<div class="food-scene" id="dessertsScene"><div class="food-left"><div class="food-carousel-container" id="dessertsCarousel"><div class="food-carousel-slide"><img src="mochy.png" class="active" alt="Mochy Puff"><img src="oshie.jpg" alt="Oshiekun"><img src="lord.jpg" alt="Lord Stow's"><img src="kokee.png" alt="Kokee Bakery"></div></div></div><div class="food-right"><h2>🧁 Desserts</h2><div class="friendly-note">🌸 Feel free to try as many as you like ✨</div><div class="category-chips" id="dessertsList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('refreshersScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('desserts','coffeeScene')">Next: Coffee →</button></div></div></div>
+<div class="food-scene" id="coffeeScene"><div class="food-left"><div class="food-carousel-container" id="coffeeCarousel"><div class="food-carousel-slide"><img src="beans.jpg" class="active" alt="Beanstro Coffee Shop"><img src="met.jpg" alt="Met Luck"><img src="gukeng.jpeg" alt="Gukeng Coffee Shop"></div></div></div><div class="food-right"><h2>☕ Coffee Shops</h2><div class="friendly-note">🌸 Feel free to try as many as you like ✨</div><div class="category-chips" id="coffeeList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('dessertsScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('coffee','pasalubongScene')">Next: Pasalubong →</button></div></div></div>
+<div class="food-scene" id="pasalubongScene"><div class="food-left"><div class="food-carousel-container" id="pasalubongCarousel"><div class="food-carousel-slide"><img src="eng.jpg" class="active" alt="Eng Bee Tin 1"><img src="eng1.jpg" alt="Eng Bee Tin 2"><img src="polland.png" alt="Polland Bakery"><img src="bake.jpg" alt="Baker's Fair"></div></div></div><div class="food-right"><h2>🎁 Pasalubongs</h2><div class="friendly-note">🌸 Feel free to try as many as you like ✨</div><div class="category-chips" id="pasalubongList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('coffeeScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('pasalubong','receiptPreview')">🧾 Generate Receipt</button></div></div></div>
+
+<div class="receipt-scene" id="receiptScene"><div class="receipt-header"><h2>🧾 WEEKEND TRIP RECEIPT</h2><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>food & culture selections</p></div><div class="receipt-body" id="receiptBody"></div><div class="receipt-footer"><button class="close-receipt" id="closeReceiptBtn">✖ Close</button><button id="claimRewardBtn" class="claim-reward-btn">🎁 Claim Reward</button></div></div>
+
+<!-- Reward Scene: removed flowers, added eminem.jpg and title -->
+<div id="rewardFloralScene" class="reward-floral-scene">
+  <button class="reward-close" id="closeRewardFloralBtn">✕</button>
+  <div class="reward-card">
+    <div class="reward-title">🎁 Here's your little reward 🎁</div>
+    <img src="eminem.jpg" alt="Special Reward" onerror="this.src='https://placehold.co/400x300?text=❤️+Reward+Image'">
+    <h3>You deserve this! 💝</h3>
+    <p>Thanks for planning the Weekend Trip</p>
   </div>
 </div>
-
-<!-- Museum scenes with descriptions added -->
-<div class="next-scene" id="fineArtsScene">
-  <div class="next-left"><div class="carousel-container"><div class="carousel-slide"><img src="fine1.jpeg" class="active" alt="Fine Art 1"><img src="fine2.jpg" alt="Fine Art 2"><img src="fine3.jpg" alt="Fine Art 3"></div><div class="carousel-controls"><button class="prev">&#10094;</button><button class="next">&#10095;</button></div></div></div>
-  <div class="next-right"><h2>🎨 National Museum of Fine Arts</h2><div class="location-line">📍 Padre Burgos Ave, Ermita, Manila</div><div class="description-text">🏛️ Home to iconic Filipino masterpieces including Juan Luna's "Spoliarium" and Félix Hidalgo's "Las Virgenes Cristianas Expuestas al Populacho". This neoclassical building houses the largest collection of Philippine art from the 17th to 20th centuries.</div><p>📅 Date: <b id="chosenDateDisplay"></b> &nbsp;| ⏰ Time: <b id="chosenTimeFineArts"></b></p><div class="nav-footer"><span></span><button class="arrow-btn" onclick="goToNaturalHistory()">&#10140;</button></div></div>
-</div>
-
-<div class="next-scene" id="naturalHistoryScene">
-  <div class="next-left"><div class="carousel-container"><div class="carousel-slide"><img src="natural1.jpg" class="active" alt="Natural History 1"><img src="natural2.jpg" alt="Natural History 2"><img src="natural3.jpg" alt="Natural History 3"></div><div class="carousel-controls"><button class="prev">&#10094;</button><button class="next">&#10095;</button></div></div></div>
-  <div class="next-right"><h2>🦕 National Museum of Natural History</h2><div class="location-line">📍 Agrifina Circle, Ermita, Manila</div><div class="description-text">🌿 Featuring the "Tree of Life" elevator at its center, this museum showcases the rich biodiversity of the Philippines. Highlights include the complete skeleton of Lolong (the largest crocodile in captivity), preserved flora and fauna, and fascinating geological exhibits about the country's natural wonders.</div><p>📅 Date: <b id="chosenDateDisplay2"></b> &nbsp;| ⏰ Time: <b id="chosenTimeNatural"></b></p><div class="nav-footer"><button class="arrow-btn" onclick="backToFineArts()">&#8592;</button><button class="arrow-btn" onclick="goToAnthropology()">&#10140;</button></div></div>
-</div>
-
-<div class="next-scene" id="anthroScene">
-  <div class="next-left"><div class="carousel-container"><div class="carousel-slide"><img src="anthro1.jpg" class="active" alt="Anthropology 1"><img src="anthro2.jpg" alt="Anthropology 2"><img src="anthro3.jpg" alt="Anthropology 3"></div><div class="carousel-controls"><button class="prev">&#10094;</button><button class="next">&#10095;</button></div></div></div>
-  <div class="next-right"><h2>🏺 National Museum of Anthropology</h2><div class="location-line">📍 Agrifina Circle, Ermita, Manila</div><div class="description-text">📜 Journey through the archaeological and ethnographic heritage of the Philippines. See the "Maitum Jars" (anthropomorphic burial jars from 5 BC), ancient goldwork, traditional indigenous textiles, and the fascinating "Maritime and Underwater Cultural Heritage" gallery. A deep dive into 50,000+ years of Filipino history.</div><p>📅 Date: <b id="chosenDateDisplay3"></b> &nbsp;| ⏰ Time: <b id="chosenTimeAnthro"></b></p><div class="nav-footer"><button class="arrow-btn" onclick="backToNaturalHistory()">&#8592;</button><button class="arrow-btn" onclick="goToBinondo()">&#10140;</button></div></div>
-</div>
-
-<div class="next-scene" id="binondoScene">
-  <div class="next-left"><div class="carousel-container"><div class="carousel-slide"><img src="binondo1.jpg" class="active" alt="Binondo 1"><img src="binondo2.jpg" alt="Binondo 2"><img src="binondo3.jpg" alt="Binondo 3"></div><div class="carousel-controls"><button class="prev">&#10094;</button><button class="next">&#10095;</button></div></div></div>
-  <div class="next-right"><h2>🏮 Binondo, Chinatown Manila</h2><div class="location-line">📍 Manila, Metro Manila (Oldest Chinatown in the world)</div><div class="description-text">🥢 Established in 1594, Binondo is the world's OLDEST Chinatown! A vibrant district where Chinese-Filipino culture thrives. Walk through Ongpin Street, visit the historic Binondo Church (Minor Basilica of St. Lorenzo Ruiz), and indulge in authentic Chinese cuisine. From hopia & tikoy to fresh lumpia and dumplings — this is a food lover's paradise with rich history at every corner.</div><p>📅 Date: <b id="chosenDateDisplay4"></b> &nbsp;| ⏰ Time: <b id="chosenTimeBinondo"></b></p><div class="nav-footer"><button class="arrow-btn" onclick="backToAnthropology()">&#8592;</button><button class="arrow-btn" onclick="goToFirstFoodCategory()">&#10140;</button></div></div>
-</div>
-
-<!-- Food scenes (all original) -->
-<div class="food-scene" id="appetizersScene">
-  <div class="food-left"><div class="food-carousel-container" id="appetizersCarousel"><div class="food-carousel-slide"><img src="vegeSelect1.jpg" class="active" alt="Vege Select 1"><img src="vegeSelect.jpg" alt="Vege Select"><img src="bites.png" alt="Binondo Bites"><img src="bites1.jpg" alt="Binondo Bites 2"><img src="dongbei.jpg" alt="Dong Bei Dumplings"><img src="friedsiopao.jpg" alt="Fried Siopao"></div><div class="food-carousel-controls"><button class="food-prev">&#10094;</button><button class="food-next">&#10095;</button></div></div></div>
-  <div class="food-right"><h2>🥟 Appetizers Selection</h2><div class="category-chips" id="appetizersList"></div><div class="food-nav"><button class="arrow-btn" onclick="backToBinondoFromFood()">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('appetizers','restoScene')">Next: Resto →</button></div></div>
-</div>
-<div class="food-scene" id="restoScene">
-  <div class="food-left"><div class="food-carousel-container" id="restoCarousel"><div class="food-carousel-slide"><img src="chuan.jpeg" class="active" alt="Chuan Kee 1"><img src="chuan1.jpeg" alt="Chuan Kee 2"><img src="chuan2.jpeg" alt="Chuan Kee 3"><img src="sincerity.jpg" alt="Sincerity 1"><img src="sincerity1.jpg" alt="Sincerity 2"><img src="sincerity2.jpg" alt="Sincerity 3"><img src="wai.jpg" alt="Wai Ying 1"><img src="wai1.jpg" alt="Wai Ying 2"><img src="wai2.jpg" alt="Wai Ying 3"></div><div class="food-carousel-controls"><button class="food-prev">&#10094;</button><button class="food-next">&#10095;</button></div></div></div>
-  <div class="food-right"><h2>🍜 Restaurants</h2><div class="category-chips" id="restoList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('appetizersScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('resto','refreshersScene')">Next: Refreshers →</button></div></div>
-</div>
-<div class="food-scene" id="refreshersScene">
-  <div class="food-left"><div class="food-carousel-container" id="refreshersCarousel"><div class="food-carousel-slide"><img src="wong.jpg" class="active" alt="Wongkei Drink"><img src="dragon.png" alt="Dragon Fruit Drink"><img src="magic.jpg" alt="Magic Water"></div><div class="food-carousel-controls"><button class="food-prev">&#10094;</button><button class="food-next">&#10095;</button></div></div></div>
-  <div class="food-right"><h2>🧃 Refreshers</h2><div class="category-chips" id="refreshersList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('restoScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('refreshers','dessertsScene')">Next: Desserts →</button></div></div>
-</div>
-<div class="food-scene" id="dessertsScene">
-  <div class="food-left"><div class="food-carousel-container" id="dessertsCarousel"><div class="food-carousel-slide"><img src="mochy.png" class="active" alt="Mochy Puff"><img src="oshie.jpg" alt="Oshiekun"><img src="lord.jpg" alt="Lord Stow's"><img src="kokee.png" alt="Kokee Bakery"></div><div class="food-carousel-controls"><button class="food-prev">&#10094;</button><button class="food-next">&#10095;</button></div></div></div>
-  <div class="food-right"><h2>🧁 Desserts</h2><div class="category-chips" id="dessertsList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('refreshersScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('desserts','coffeeScene')">Next: Coffee →</button></div></div>
-</div>
-<div class="food-scene" id="coffeeScene">
-  <div class="food-left"><div class="food-carousel-container" id="coffeeCarousel"><div class="food-carousel-slide"><img src="beans.jpg" class="active" alt="Beanstro Coffee Shop"><img src="met.jpg" alt="Met Luck"><img src="gukeng.jpeg" alt="Gukeng Coffee Shop"></div><div class="food-carousel-controls"><button class="food-prev">&#10094;</button><button class="food-next">&#10095;</button></div></div></div>
-  <div class="food-right"><h2>☕ Coffee Shops</h2><div class="category-chips" id="coffeeList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('dessertsScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('coffee','pasalubongScene')">Next: Pasalubong →</button></div></div>
-</div>
-<div class="food-scene" id="pasalubongScene">
-  <div class="food-left"><div class="food-carousel-container" id="pasalubongCarousel"><div class="food-carousel-slide"><img src="eng.jpg" class="active" alt="Eng Bee Tin 1"><img src="eng1.jpg" alt="Eng Bee Tin 2"><img src="polland.png" alt="Polland Bakery"><img src="bake.jpg" alt="Baker's Fair"></div><div class="food-carousel-controls"><button class="food-prev">&#10094;</button><button class="food-next">&#10095;</button></div></div></div>
-  <div class="food-right"><h2>🎁 Pasalubongs</h2><div class="category-chips" id="pasalubongList"></div><div class="food-nav"><button class="arrow-btn" onclick="goPrevFood('coffeeScene')">&#8592;</button><button class="next-btn-sm" onclick="saveCategoryAndNext('pasalubong','receiptPreview')">🧾 Generate Receipt</button></div></div>
-</div>
-
-<div class="receipt-scene" id="receiptScene"><div class="receipt-header"><h2>🧾 BINONDO TRIP RECEIPT</h2><p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p><p>your ultimate food & culture itinerary</p></div><div class="receipt-body" id="receiptBody"></div><div class="receipt-footer"><button class="close-receipt" id="closeReceiptBtn">✖ Close</button><button id="printReceiptBtn">🖨️ Print Receipt</button></div></div>
 
 <script>
+// All functional logic preserved, claim reward shows new minimal card
 let selectedDate = "2026-04-18", selectedTime = "9:00 AM";
-let pendingConfirmCallback = null;
 let selections = { appetizers: [], resto: [], refreshers: [], desserts: [], coffee: [], pasalubong: [] };
-const menuData = {
-  appetizers: ["Vege Select", "Binondo Bites", "Dong Bei Dumplings", "Shanghai Fried Siopao"],
-  resto: ["Chuan Kee Chinese", "Sincerity", "Wai Ying Fast Food"],
-  refreshers: ["Wongkei", "Dragon Fruit Drink", "Magic Water"],
-  desserts: ["Mochy Puff", "Oshiekun", "Lord Stow's", "Kokee Bakery"],
-  coffee: ["Beanstro Coffee Shop", "Met Luck", "Gukeng Coffee Shop"],
-  pasalubong: ["Ehh Bee Tin", "Pollands", "Baker's Fair"]
-};
-function formatDate(dateString) { if(!dateString) return "Not set"; return new Date(dateString).toLocaleDateString(undefined, { year:'numeric', month:'long', day:'numeric' }); }
-function openEnvelope() { 
-  const w=document.getElementById('wrapper'); 
-  w.classList.add('open'); 
-  setTimeout(()=>{ 
-    document.getElementById('scene1').classList.add('show'); 
-    w.style.display='none'; 
-  }, 1000); 
-}
-function proceedWithDateTime() {
-  const dateInput=document.getElementById('meetingDate'), timeSelect=document.getElementById('time');
-  selectedDate=dateInput.value; selectedTime=timeSelect.value;
-  const fd=formatDate(selectedDate);
-  ['chosenDateDisplay','chosenDateDisplay2','chosenDateDisplay3','chosenDateDisplay4'].forEach(id=>{ if(document.getElementById(id)) document.getElementById(id).textContent=fd; });
-  ['chosenTimeFineArts','chosenTimeNatural','chosenTimeAnthro','chosenTimeBinondo'].forEach(id=>{ if(document.getElementById(id)) document.getElementById(id).textContent=selectedTime; });
-  document.getElementById('scene1').classList.remove('show');
-  document.getElementById('fineArtsScene').classList.add('show');
-}
-function showConfirmModal(gifType, dateStr, timeStr, onConfirm) {
-  const modal = document.getElementById('confirmModal');
-  const modalGifImg = document.getElementById('modalGifImg');
-  const modalDateTimeDiv = document.getElementById('modalDateTime');
-  const modalMsg = document.getElementById('modalMessage');
-  modalGifImg.src = gifType === 'happy' ? 'happy.gif' : 'sad.gif';
-  modalDateTimeDiv.innerHTML = `📅 ${dateStr} &nbsp;| ⏰ ${timeStr}`;
-  modalMsg.innerHTML = gifType === 'happy' ? "🎉 Yay! See you on your Binondo trip! 🎉" : "💔 Aww, maybe next time! Still, here's a little hug 💔";
-  modal.classList.add('show');
-  const yesBtn = document.getElementById('modalYesBtn');
-  const noBtn = document.getElementById('modalNoBtn');
-  const handleYes = () => { modal.classList.remove('show'); cleanup(); if(onConfirm && gifType === 'happy') onConfirm(); };
-  const handleNo = () => { modal.classList.remove('show'); cleanup(); };
-  const cleanup = () => { yesBtn.removeEventListener('click', handleYes); noBtn.removeEventListener('click', handleNo); };
-  yesBtn.addEventListener('click', handleYes);
-  noBtn.addEventListener('click', handleNo);
-}
-function onSetDateTime() {
-  const dateInput=document.getElementById('meetingDate'), timeSelect=document.getElementById('time');
-  const rawDate = dateInput.value, rawTime = timeSelect.value;
-  const formattedLong = formatDate(rawDate);
-  showConfirmModal('happy', formattedLong, rawTime, () => { proceedWithDateTime(); });
-}
-document.getElementById('setDateTimeBtn')?.addEventListener('click', onSetDateTime);
-function goToNaturalHistory(){ switchScene('fineArtsScene','naturalHistoryScene'); }
-function backToFineArts(){ switchScene('naturalHistoryScene','fineArtsScene'); }
-function goToAnthropology(){ switchScene('naturalHistoryScene','anthroScene'); }
-function backToNaturalHistory(){ switchScene('anthroScene','naturalHistoryScene'); }
-function goToBinondo(){ switchScene('anthroScene','binondoScene'); }
-function backToAnthropology(){ switchScene('binondoScene','anthroScene'); }
-function goToFirstFoodCategory(){ document.getElementById('binondoScene').classList.remove('show'); renderCategoryScene('appetizers'); document.getElementById('appetizersScene').classList.add('show'); initFoodCarousel('appetizersCarousel'); }
-function backToBinondoFromFood(){ document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); document.getElementById('binondoScene').classList.add('show'); }
-function goPrevFood(prevId){ document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); document.getElementById(prevId).classList.add('show'); if(prevId === 'appetizersScene') initFoodCarousel('appetizersCarousel'); else if(prevId === 'restoScene') initFoodCarousel('restoCarousel'); else if(prevId === 'refreshersScene') initFoodCarousel('refreshersCarousel'); else if(prevId === 'dessertsScene') initFoodCarousel('dessertsCarousel'); else if(prevId === 'coffeeScene') initFoodCarousel('coffeeCarousel'); else if(prevId === 'pasalubongScene') initFoodCarousel('pasalubongCarousel'); }
+const menuData = { appetizers: ["Vege Select", "Binondo Bites", "Dong Bei Dumplings", "Shanghai Fried Siopao"], resto: ["Chuan Kee Chinese", "Sincerity", "Wai Ying Fast Food"], refreshers: ["Wongkei", "Dragon Fruit Drink", "Magic Water"], desserts: ["Mochy Puff", "Oshiekun", "Lord Stow's", "Kokee Bakery"], coffee: ["Beanstro Coffee Shop", "Met Luck", "Gukeng Coffee Shop"], pasalubong: ["Eng Bee Tin", "Pollands", "Baker's Fair"] };
+function enableSwipeAndAutoSlide(container, intervalMs=2000){ if(!container) return; let startX=0,endX=0,autoInt=null; const slideDiv=container.querySelector('.carousel-slide, .food-carousel-slide'); if(!slideDiv) return; let imgs=Array.from(slideDiv.querySelectorAll('img')); if(imgs.length<=1) return; let curIdx=imgs.findIndex(img=>img.classList.contains('active')); if(curIdx===-1){ imgs[0].classList.add('active'); curIdx=0; } let dotsDiv=container.querySelector('.custom-dots'); if(!dotsDiv){ dotsDiv=document.createElement('div'); dotsDiv.className='custom-dots'; dotsDiv.style.cssText='position:absolute;bottom:12px;left:0;width:100%;display:flex;justify-content:center;gap:8px;z-index:10;'; imgs.forEach((_,i)=>{ const dot=document.createElement('span'); dot.style.cssText=`width:8px;height:8px;border-radius:50%;background:${i===curIdx?'#ffffff':'rgba(255,255,255,0.55)'};transition:0.2s;cursor:pointer;pointer-events:auto;`; dot.addEventListener('click',()=>{ if(autoInt)clearInterval(autoInt); showImage(i); startAutoSlide(); }); dotsDiv.appendChild(dot); }); container.appendChild(dotsDiv); } const dots=Array.from(dotsDiv.children); function showImage(idx){ imgs[curIdx].classList.remove('active'); curIdx=(idx+imgs.length)%imgs.length; imgs[curIdx].classList.add('active'); dots.forEach((d,i)=>d.style.background=i===curIdx?'#ffffff':'rgba(255,255,255,0.55)'); } function next(){ showImage(curIdx+1); } function startAutoSlide(){ if(autoInt)clearInterval(autoInt); autoInt=setInterval(()=>next(),intervalMs); } container.addEventListener('touchstart',(e)=>{ startX=e.changedTouches[0].screenX; },{passive:true}); container.addEventListener('touchend',(e)=>{ endX=e.changedTouches[0].screenX; if(Math.abs(endX-startX)<30) return; if(autoInt)clearInterval(autoInt); (endX-startX)>0? showImage(curIdx-1): next(); startAutoSlide(); },{passive:true}); container.addEventListener('mouseenter',()=>{ if(autoInt)clearInterval(autoInt); }); container.addEventListener('mouseleave',()=>startAutoSlide()); startAutoSlide(); }
+function formatDate(dateString){ if(!dateString) return "Not set"; return new Date(dateString).toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'}); }
+function openEnvelope(){ const w=document.getElementById('wrapper'); w.classList.add('open'); setTimeout(()=>{ document.getElementById('scene1').classList.add('show'); w.style.display='none'; },1000); }
+function proceedWithDateTime(){ const fd=formatDate(selectedDate); ['chosenDateDisplay','chosenDateDisplay2','chosenDateDisplay3','chosenDateDisplay4'].forEach(id=>{ if(document.getElementById(id)) document.getElementById(id).textContent=fd; }); ['chosenTimeFineArts','chosenTimeNatural','chosenTimeAnthro','chosenTimeBinondo'].forEach(id=>{ if(document.getElementById(id)) document.getElementById(id).textContent=selectedTime; }); document.getElementById('scene1').classList.remove('show'); document.getElementById('fineArtsScene').classList.add('show'); }
+function showConfirmModal(gifType,dateStr,timeStr,onConfirm){ const modal=document.getElementById('confirmModal'); const modalGifImg=document.getElementById('modalGifImg'); const modalDateTimeDiv=document.getElementById('modalDateTime'); const modalMsg=document.getElementById('modalMessage'); modalGifImg.src=gifType==='happy'?'happy.gif':'sad.gif'; modalDateTimeDiv.innerHTML=`📅 ${dateStr} &nbsp;| ⏰ ${timeStr}`; modalMsg.innerHTML=gifType==="happy"?"🎉 Yay! See you on our Weekend trip! 🎉":"💔 Aww, maybe next time! Still, here's a little hug 💔"; modal.classList.add('show'); const yesBtn=document.getElementById('modalYesBtn'),noBtn=document.getElementById('modalNoBtn'); const handleYes=()=>{ modal.classList.remove('show'); cleanup(); if(onConfirm&&gifType==='happy') onConfirm(); }; const handleNo=()=>{ modal.classList.remove('show'); cleanup(); }; const cleanup=()=>{ yesBtn.removeEventListener('click',handleYes); noBtn.removeEventListener('click',handleNo); }; yesBtn.addEventListener('click',handleYes); noBtn.addEventListener('click',handleNo); }
+document.getElementById('setDateTimeBtn')?.addEventListener('click',()=>{ const dateInput=document.getElementById('meetingDate'), timeSelect=document.getElementById('time'); selectedDate=dateInput.value; selectedTime=timeSelect.value; const formattedLong=formatDate(selectedDate); showConfirmModal('happy',formattedLong,selectedTime,()=>{ proceedWithDateTime(); }); });
 function switchScene(hide,show){ document.getElementById(hide).classList.remove('show'); document.getElementById(show).classList.add('show'); }
-function renderCategoryScene(catKey) { const container = document.getElementById(`${catKey}List`); if(!container) return; container.innerHTML = ''; menuData[catKey].forEach(item => { const div = document.createElement('div'); div.className = 'food-checkbox'; const cbId = `${catKey}_${item.replace(/\s/g,'')}`; const checkedAttr = selections[catKey].includes(item) ? 'checked' : ''; div.innerHTML = `<input type="checkbox" id="${cbId}" value="${item}" ${checkedAttr}><label for="${cbId}">${item}</label>`; container.appendChild(div); }); }
-function saveCategoryAndNext(catKey, nextSceneId) { const container = document.getElementById(`${catKey}List`); if(container) { const selected = Array.from(container.querySelectorAll('input:checked')).map(cb => cb.value); selections[catKey] = selected; } if(nextSceneId === 'receiptPreview') { showReceiptSummary(); return; } document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); document.getElementById(nextSceneId).classList.add('show'); if(nextSceneId === 'appetizersScene') initFoodCarousel('appetizersCarousel'); if(nextSceneId === 'restoScene') initFoodCarousel('restoCarousel'); if(nextSceneId === 'refreshersScene') initFoodCarousel('refreshersCarousel'); if(nextSceneId === 'dessertsScene') initFoodCarousel('dessertsCarousel'); if(nextSceneId === 'coffeeScene') initFoodCarousel('coffeeCarousel'); if(nextSceneId === 'pasalubongScene') initFoodCarousel('pasalubongCarousel'); }
-function initFoodCarousel(carouselId) { const container = document.getElementById(carouselId); if(!container) return; const slideDiv = container.querySelector('.food-carousel-slide'); if(!slideDiv) return; const imgs = Array.from(slideDiv.querySelectorAll('img')); if(imgs.length <= 1) return; let currentIdx = imgs.findIndex(img => img.classList.contains('active')); if(currentIdx === -1) { imgs[0].classList.add('active'); currentIdx = 0; } const oldDots = container.querySelector('.custom-dots'); if(oldDots) oldDots.remove(); const dotsDiv = document.createElement('div'); dotsDiv.className = 'custom-dots'; dotsDiv.style.cssText = 'position:absolute;bottom:12px;left:0;width:100%;display:flex;justify-content:center;gap:8px;z-index:10;'; imgs.forEach((_, i) => { const dot = document.createElement('span'); dot.style.cssText = `width:8px;height:8px;border-radius:50%;background:${i === currentIdx ? '#ffffff' : 'rgba(255,255,255,0.55)'};transition:0.2s;cursor:pointer;pointer-events:auto;`; dot.addEventListener('click', () => { clearInterval(autoInterval); showImage(i); autoInterval = setInterval(() => showImage(currentIdx + 1), 3500); }); dotsDiv.appendChild(dot); }); container.appendChild(dotsDiv); const dots = Array.from(dotsDiv.children); function showImage(index) { imgs[currentIdx].classList.remove('active'); currentIdx = (index + imgs.length) % imgs.length; imgs[currentIdx].classList.add('active'); dots.forEach((d, i) => d.style.background = i === currentIdx ? '#ffffff' : 'rgba(255,255,255,0.55)'); } let autoInterval = setInterval(() => showImage(currentIdx + 1), 3500); const prevBtn = container.querySelector('.food-prev'); const nextBtn = container.querySelector('.food-next'); if(prevBtn) { const newPrev = prevBtn.cloneNode(true); prevBtn.parentNode.replaceChild(newPrev, prevBtn); newPrev.addEventListener('click', (e) => { e.stopPropagation(); clearInterval(autoInterval); showImage(currentIdx - 1); autoInterval = setInterval(() => showImage(currentIdx + 1), 3500); }); } if(nextBtn) { const newNext = nextBtn.cloneNode(true); nextBtn.parentNode.replaceChild(newNext, nextBtn); newNext.addEventListener('click', (e) => { e.stopPropagation(); clearInterval(autoInterval); showImage(currentIdx + 1); autoInterval = setInterval(() => showImage(currentIdx + 1), 3500); }); } container.addEventListener('mouseenter', () => clearInterval(autoInterval)); container.addEventListener('mouseleave', () => { autoInterval = setInterval(() => showImage(currentIdx + 1), 3500); }); }
-function showReceiptSummary() { const activeFood = document.querySelector('.food-scene.show'); if(activeFood && activeFood.id !== 'receiptScene') { let key = ''; if(activeFood.id === 'appetizersScene') key='appetizers'; else if(activeFood.id === 'restoScene') key='resto'; else if(activeFood.id === 'refreshersScene') key='refreshers'; else if(activeFood.id === 'dessertsScene') key='desserts'; else if(activeFood.id === 'coffeeScene') key='coffee'; else if(activeFood.id === 'pasalubongScene') key='pasalubong'; if(key) { const container = document.getElementById(`${key}List`); if(container) selections[key] = Array.from(container.querySelectorAll('input:checked')).map(cb=>cb.value); } } const allSelected = Object.values(selections).flat(); if(allSelected.length===0){ alert("✨ Please select at least one food stop before generating your receipt!"); return; } const formattedDateLong = formatDate(selectedDate); const now = new Date(); const receiptID = "BIN" + now.getFullYear() + (now.getMonth()+1) + now.getDate() + now.getHours() + now.getMinutes(); let foodHtml = ''; const categoryMap = { appetizers:'🥟 Appetizers', resto:'🍜 Resto', refreshers:'🧃 Refreshers', desserts:'🧁 Desserts', coffee:'☕ Coffee Shops', pasalubong:'🎁 Pasalubongs' }; for(let [key,label] of Object.entries(categoryMap)) { const items = selections[key] || []; foodHtml += `<div class="food-category-receipt">${label}</div><div style="margin-bottom:12px;">`; if(items.length) items.forEach(it=>{ foodHtml += `<span class="food-receipt-item">${it}</span>`; }); else foodHtml += `<span style="color:#bbb; font-size:11px;">— none selected —</span>`; foodHtml += `</div>`; } const receiptContent = `<div class="receipt-section"><div class="receipt-row"><span class="receipt-label">RECEIPT NO.</span><span class="receipt-value">${receiptID}</span></div><div class="receipt-row"><span class="receipt-label">DATE ISSUED</span><span class="receipt-value">${formatDate(new Date().toISOString())}</span></div><div class="receipt-row"><span class="receipt-label">MEETING POINT</span><span class="receipt-value">Market! Market! Pasay</span></div></div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">📅 DATE & TIME</div><div class="receipt-row"><span class="receipt-label">Event Date</span><span class="receipt-value">${formattedDateLong}</span></div><div class="receipt-row"><span class="receipt-label">Assembly Time</span><span class="receipt-value">${selectedTime}</span></div></div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">🏛️ MUSEUM TOUR</div><div class="receipt-row"><span class="receipt-label">Route</span><span class="receipt-value">Fine Arts → Natural History → Anthropology → Binondo</span></div><div class="receipt-row"><span class="receipt-label">Location</span><span class="receipt-value">Manila (National Museums Complex)</span></div></div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">🍜 BINONDO FOOD CRAWL</div>${foodHtml}</div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">💝 NOTES</div><div class="receipt-row"><span class="receipt-label">✔️</span><span class="receipt-value">Wear comfy clothes & shoes </span></div><div class="receipt-row"><span class="receipt-label">✔️</span><span class="receipt-value">Stay hydrated & take photos!</span></div><div class="receipt-row"><span class="receipt-label">✔️</span><span class="receipt-value">ENJOYYYYYYYY!!!!!</span></div></div><div class="receipt-total">━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>Thank you! Enjoy your Binondo Trip 💕<br><span style="font-size:10px;">Please DM me the copy of the receipt</span></div>`; document.getElementById('receiptBody').innerHTML = receiptContent; document.getElementById('receiptScene').classList.add('show'); document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); }
+function goToNaturalHistory(){ switchScene('fineArtsScene','naturalHistoryScene'); } function backToFineArts(){ switchScene('naturalHistoryScene','fineArtsScene'); } function goToAnthropology(){ switchScene('naturalHistoryScene','anthroScene'); } function backToNaturalHistory(){ switchScene('anthroScene','naturalHistoryScene'); } function goToBinondo(){ switchScene('anthroScene','binondoScene'); } function backToAnthropology(){ switchScene('binondoScene','anthroScene'); } function goToFirstFoodCategory(){ document.getElementById('binondoScene').classList.remove('show'); renderCategoryScene('appetizers'); document.getElementById('appetizersScene').classList.add('show'); initFoodCarouselWithSwipe('appetizersCarousel'); } function backToBinondoFromFood(){ document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); document.getElementById('binondoScene').classList.add('show'); } function goPrevFood(prevId){ document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); document.getElementById(prevId).classList.add('show'); if(prevId.includes('appetizers')) initFoodCarouselWithSwipe('appetizersCarousel'); else if(prevId.includes('resto')) initFoodCarouselWithSwipe('restoCarousel'); else if(prevId.includes('refreshers')) initFoodCarouselWithSwipe('refreshersCarousel'); else if(prevId.includes('desserts')) initFoodCarouselWithSwipe('dessertsCarousel'); else if(prevId.includes('coffee')) initFoodCarouselWithSwipe('coffeeCarousel'); else if(prevId.includes('pasalubong')) initFoodCarouselWithSwipe('pasalubongCarousel'); }
+function renderCategoryScene(catKey){ const container=document.getElementById(`${catKey}List`); if(!container) return; container.innerHTML=''; menuData[catKey].forEach(item=>{ const div=document.createElement('div'); div.className='food-checkbox'; const cbId=`${catKey}_${item.replace(/\s/g,'')}`; const checkedAttr=selections[catKey].includes(item)?'checked':''; div.innerHTML=`<input type="checkbox" id="${cbId}" value="${item}" ${checkedAttr}><label for="${cbId}">${item}</label>`; container.appendChild(div); }); }
+function saveCategoryAndNext(catKey, nextSceneId){ const container=document.getElementById(`${catKey}List`); if(container){ selections[catKey]=Array.from(container.querySelectorAll('input:checked')).map(cb=>cb.value); } if(nextSceneId==='receiptPreview'){ showReceiptSummary(); return; } document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); document.getElementById(nextSceneId).classList.add('show'); if(nextSceneId.includes('appetizers')) initFoodCarouselWithSwipe('appetizersCarousel'); if(nextSceneId.includes('resto')) initFoodCarouselWithSwipe('restoCarousel'); if(nextSceneId.includes('refreshers')) initFoodCarouselWithSwipe('refreshersCarousel'); if(nextSceneId.includes('desserts')) initFoodCarouselWithSwipe('dessertsCarousel'); if(nextSceneId.includes('coffee')) initFoodCarouselWithSwipe('coffeeCarousel'); if(nextSceneId.includes('pasalubong')) initFoodCarouselWithSwipe('pasalubongCarousel'); }
+function initFoodCarouselWithSwipe(carouselId){ const container=document.getElementById(carouselId); if(container) enableSwipeAndAutoSlide(container,2000); }
+function showReceiptSummary(){ const allSelected=Object.values(selections).flat(); if(allSelected.length===0){ alert("✨ Please select at least one food stop before generating your receipt!"); return; } const formattedDateLong=formatDate(selectedDate); let foodHtml=''; const categoryMap={ appetizers:'🥟 Appetizers', resto:'🍜 Restaurants', refreshers:'🧃 Refreshers', desserts:'🧁 Desserts', coffee:'☕ Coffee Shops', pasalubong:'🎁 Pasalubongs' }; for(let[key,label]of Object.entries(categoryMap)){ const items=selections[key]||[]; foodHtml+=`<div class="food-category-receipt">${label}</div><div style="margin-bottom:12px;">`; if(items.length) items.forEach(it=>{ foodHtml+=`<span class="food-receipt-item">${it}</span>`; }); else foodHtml+=`<span style="color:#bbb; font-size:11px;">— none selected —</span>`; foodHtml+=`</div>`; } const receiptContent=`<div class="receipt-section"><div class="receipt-section-title">📅 DATE & TIME</div><div class="receipt-row"><span>Event Date</span><span>${formattedDateLong}</span></div><div class="receipt-row"><span>Assembly Time</span><span>${selectedTime}</span></div></div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">🏛️ MUSEUM TOUR</div><div class="receipt-row"><span>Route</span><span>Fine Arts → Natural History → Anthropology → Binondo</span></div></div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">🍜 BINONDO FOOD CRAWL</div>${foodHtml}</div><div class="receipt-line"></div><div class="receipt-section"><div class="receipt-section-title">💝 NOTES</div><div class="receipt-row"><span>✔️</span><span>Wear comfy clothes & shoes</span></div><div class="receipt-row"><span>✔️</span><span>Stay hydrated & take photos!</span></div><div class="receipt-row"><span>✔️</span><span>ENJOYYYYYYYYY!!!!!!!!!!</span></div></div><div class="receipt-total">━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br>Thank you! Enjoy your Weekend Trip 💕<br><span style="font-size:10px;">Save this copy or DM me this list</span></div>`; document.getElementById('receiptBody').innerHTML=receiptContent; document.getElementById('receiptScene').classList.add('show'); document.querySelectorAll('.food-scene.show').forEach(s=>s.classList.remove('show')); }
 function closeReceipt(){ document.getElementById('receiptScene').classList.remove('show'); }
-function printReceipt(){ const rc=document.getElementById('receiptScene').cloneNode(true); rc.classList.add('show'); const pw=window.open('','_blank'); pw.document.write(`<html><head><title>Binondo Date Receipt</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box;} body{background:#fffef7;font-family:'DM Sans',monospace;display:flex;justify-content:center;padding:20px;} .receipt-scene{width:520px;background:#fffef7;margin:0 auto;}.receipt-header{background:#2d2d2d;padding:20px;color:#f5e6d3;text-align:center;} .receipt-body{padding:24px 28px;}.receipt-line{border-top:1px dashed #ccc;margin:16px 0;}.receipt-section-title{font-weight:700;font-size:14px;color:#ff4d6d;border-left:3px solid #ff4d6d;padding-left:10px;margin:12px 0 10px;} .receipt-row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:12.5px;}.food-receipt-item{display:inline-block;background:#ffe6eb;padding:3px 10px;border-radius:20px;margin:3px 4px;font-size:11px;color:#ff4d6d;} .food-category-receipt{margin:12px 0 6px;font-weight:700;color:#a55c6e;}.receipt-total{margin-top:20px;padding-top:12px;border-top:2px dashed #ffb6c1;text-align:center;}</style></head><body>${rc.outerHTML}</body></html>`); pw.document.close(); pw.print(); }
+function showRewardFloralScene(){ document.getElementById('rewardFloralScene').classList.add('active'); }
+function closeRewardFloralScene(){ document.getElementById('rewardFloralScene').classList.remove('active'); }
 document.getElementById('closeReceiptBtn')?.addEventListener('click',closeReceipt);
-document.getElementById('printReceiptBtn')?.addEventListener('click',printReceipt);
-function initFoodScenes() { for(let cat of Object.keys(menuData)) renderCategoryScene(cat); }
-window.addEventListener('DOMContentLoaded',()=>{ let d=new Date(); d.setDate(d.getDate()+7); let yyyy=d.getFullYear(), mm=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0'); let dp=document.getElementById('meetingDate'); if(dp) dp.value=`${yyyy}-${mm}-${dd}`; initFoodScenes(); function initAutoCarousels(){ document.querySelectorAll('.next-scene .carousel-container').forEach(c=>{ let imgs=Array.from(c.querySelectorAll('.carousel-slide img')), idx=imgs.findIndex(i=>i.classList.contains('active')); if(idx===-1 && imgs[0]) imgs[0].classList.add('active'); let current=idx===-1?0:idx; let dotsDiv=document.createElement('div'); dotsDiv.style.cssText='position:absolute;bottom:12px;left:0;width:100%;display:flex;justify-content:center;gap:8px;z-index:10;'; imgs.forEach((_,i)=>{ let dot=document.createElement('span'); dot.style.cssText=`width:8px;height:8px;border-radius:50%;background:${i===current?'#fff':'rgba(255,255,255,0.55)'};`; dotsDiv.appendChild(dot); }); c.appendChild(dotsDiv); let dots=Array.from(dotsDiv.children); function showImage(index){ imgs[current].classList.remove('active'); current=(index+imgs.length)%imgs.length; imgs[current].classList.add('active'); dots.forEach((d,i)=>d.style.background=i===current?'#fff':'rgba(255,255,255,0.55)'); } let interval=setInterval(()=>showImage(current+1),3500); let prev=c.querySelector('.prev'), next=c.querySelector('.next'); if(prev) prev.addEventListener('click',(e)=>{ e.stopPropagation(); clearInterval(interval); showImage(current-1); interval=setInterval(()=>showImage(current+1),3500); }); if(next) next.addEventListener('click',(e)=>{ e.stopPropagation(); clearInterval(interval); showImage(current+1); interval=setInterval(()=>showImage(current+1),3500); }); c.addEventListener('mouseenter',()=>clearInterval(interval)); c.addEventListener('mouseleave',()=>{ interval=setInterval(()=>showImage(current+1),3500); }); }); } initAutoCarousels(); initFoodCarousel('restoCarousel'); initFoodCarousel('refreshersCarousel'); initFoodCarousel('dessertsCarousel'); initFoodCarousel('coffeeCarousel'); initFoodCarousel('pasalubongCarousel'); });
+document.getElementById('claimRewardBtn')?.addEventListener('click',showRewardFloralScene);
+document.getElementById('closeRewardFloralBtn')?.addEventListener('click',closeRewardFloralScene);
+function initFoodScenes(){ for(let cat of Object.keys(menuData)) renderCategoryScene(cat); }
+window.addEventListener('DOMContentLoaded',()=>{ let d=new Date(); d.setDate(d.getDate()+7); let yyyy=d.getFullYear(), mm=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0'); let dp=document.getElementById('meetingDate'); if(dp) dp.value=`${yyyy}-${mm}-${dd}`; initFoodScenes(); document.querySelectorAll('.carousel-container').forEach(c=>enableSwipeAndAutoSlide(c,2000)); document.querySelectorAll('.food-carousel-container').forEach(c=>enableSwipeAndAutoSlide(c,2000)); ['restoCarousel','refreshersCarousel','dessertsCarousel','coffeeCarousel','pasalubongCarousel','appetizersCarousel'].forEach(id=>{ if(document.getElementById(id)) initFoodCarouselWithSwipe(id); }); });
 </script>
 </body>
 </html>
